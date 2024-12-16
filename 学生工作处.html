@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>学生工作处</title>
+		<link rel="stylesheet" href="菜单.css" />
+		<link rel="stylesheet" href="轮播图.css" />
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				max-width: 1920px;
+				margin: 0 auto;
+				background-color: #fff;
+			}
+			.news-title {
+			   font-size: 24px;
+			   font-weight: bold;
+			   margin: 0;
+			   text-align: center;
+		   }
+			.line {
+			   border: none;
+			   border-top: 1px solid #ccc;
+			   margin: 5px 0;
+			}
+			.kong{
+				width: 100%;
+				height: 40px;
+				background-color: #fff;
+			}
+			#nav1 {/*父类box*/
+			                background-color: #ac3229;
+			                width: 100%;
+			            }
+			.logo{
+				
+				align-items: center;
+				height: 100px;
+				width: 100%;
+				background-image: url('img/flash.jpg');
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+			.logo2{
+				width: 728px;
+				height: 85px;
+				margin-left: 150px;
+				background-image: url('img/flash.jpg');
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+			.hezi{
+				display:flex;
+				width: 1300px;
+				height: 50px;
+			}
+		</style>
+		<script>
+		    window.onload = function () {
+		        // 获取图片容器、指示器容器以及所有指示器元素
+		        const carousel = document.querySelector('.carousel');
+		        const indicators = document.querySelectorAll('.indicator');
+		        let currentIndex = 0;
+		
+		        // 切换到指定索引的图片函数
+		        function goToSlide(index) {
+		            carousel.style.transform = `translateX(-${index * 100}%)`;
+		            // 移除之前的活动指示器样式
+		            document.querySelector('.indicator.active').classList.remove('active');
+		            // 设置当前指示器为活动状态
+		            indicators[index].classList.add('active');
+		            currentIndex = index;
+		        }
+		
+		        // 为每个指示器添加点击事件，点击时切换图片
+		        indicators.forEach((indicator, index) => {
+		            indicator.addEventListener('click', () => {
+		                goToSlide(index);
+		            });
+		        });
+		
+		        // 自动轮播函数
+		        function autoPlay() {
+		            currentIndex++;
+		            if (currentIndex >= indicators.length) {
+		                currentIndex = 0;
+		            }
+		            goToSlide(currentIndex);
+		        }
+		
+		        // 启动自动轮播，每3秒切换一次图片
+		        setInterval(autoPlay, 3000);
+		    }
+		</script>
+	</head>
+	<body>
+		
+		<div class="logo"></div>
+		<div>
+			<nav id="nav1">
+				<ul class="nav-sub">
+					<li><a href="首页.html">首页</a></li>
+					<li><a href="建党工作.html">建党工作</a></li>
+					<li><a href="学校简介.html">学院简介</a></li>
+					<li><a href="教学科研.html">教学科研</a></li>
+					<li><a href="#">管理机构</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="carousel-container">
+		    <!-- 图片容器 -->
+		    <div class="carousel">
+		        <img src="img/21.png" alt="图片1" class="carousel-item">
+		        <img src="img/22.png" alt="图片2" class="carousel-item">
+		        <img src="img/23.png" alt="图片3" class="carousel-item">
+				<img src="img/24.png" alt="图片1" class="carousel-item">
+				<img src="img/25.jpg" alt="图片2" class="carousel-item">
+				<img src="img/26.png" alt="图片3" class="carousel-item">
+		    </div>
+		    <!-- 指示器容器 -->
+		    <div class="indicators">
+		        <span class="indicator active"></span>
+		        <span class="indicator"></span>
+		        <span class="indicator"></span>
+				<span class="indicator"></span>
+				<span class="indicator"></span>
+		        <span class="indicator"></span>
+		    </div>
+		</div>
+		<div class="kong"></div>
+		<div class="news-title">新闻.公告</div>
+		<div class="line"></div>
+		<div class="mainBox2">
+			<div class="mainCont1">
+				<div class="leftBox2">
+					<div class="mybutton1">通知公告</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">健康管理学院：在黔地挑战中彰显教学成效与学子风采</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">“茶文化进校园”主题体验活动在我校阳明书院举行</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">“弘扬中华优秀传统文化，奏响时代精神华章”主题读书分享会在我校阳明书院举行</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">我校教师在贵州省大学生心理健康教育优质示范课评比中斩获佳绩</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">我校老师在杂志《Qualitative Theory of Dynamical Systems》SCI(数学3区)上发表新论文</div>
+					</div>
+					
+				</div>
+				<div class="leftBox2">
+					<div class="mybutton1">学工动态</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">我校举办2024年教职工冬季趣味运动会</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">“以学促进 传播“媒”好力量丨我校特聘教授喻健作新闻宣传专项培训”主题体验活动在我校阳明书院举行</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">“弘扬中华优秀传统文化，省教育厅（省委教育工委）民办高校党组织书记、学校党委书记邓维实作党的二十届三中全会专题宣讲”主题读书分享会在我校阳明书院举行</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">健康管理学院：省教育厅（省委教育工委）民办高校党组织书记、我校党委书记邓维实主持召开相关单位、部门工作调研推进会</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">党建协同聚合力 结队共建促发展丨邓维实主持召开部分民办高校党纪学习教育现场推进会</div>
+					</div>
+				</div>
+				<div class="leftBox2">
+					<div class="mybutton1">思政教育</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">地理信息实训教学中心设备采购项目招标参数变更公告</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">贵阳信息科技学院内超市招标公告</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">贵阳信息科技学院新商科数字化转型教学实践基地建设项目招标公告</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">贵阳信息科技学院土木建筑虚拟仿真实验室建设项目招标公告</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">贵阳信息科技学院环境工程综合实验室建设项目招标公告</div>
+					</div>
+				</div>
+				
+				</div>
+				
+			</div>
+			
+		</div>
+		<div class="mainBox2">
+			<div class="mainCont1">
+				<div class="leftBox2">
+					<div class="mybutton1">学生资助</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">健康管理学院：在黔地挑战中彰显教学成效与学子风采</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">“茶文化进校园”主题体验活动在我校阳明书院举行</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">“弘扬中华优秀传统文化，奏响时代精神华章”主题读书分享会在我校阳明书院举行</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">我校教师在贵州省大学生心理健康教育优质示范课评比中斩获佳绩</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">我校老师在杂志《Qualitative Theory of Dynamical Systems》SCI(数学3区)上发表新论文</div>
+					</div>
+					
+				</div>
+				<div class="leftBox2">
+					<div class="mybutton1">学生事务</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">我校举办2024年教职工冬季趣味运动会</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">“以学促进 传播“媒”好力量丨我校特聘教授喻健作新闻宣传专项培训”主题体验活动在我校阳明书院举行</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">“弘扬中华优秀传统文化，省教育厅（省委教育工委）民办高校党组织书记、学校党委书记邓维实作党的二十届三中全会专题宣讲”主题读书分享会在我校阳明书院举行</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">健康管理学院：省教育厅（省委教育工委）民办高校党组织书记、我校党委书记邓维实主持召开相关单位、部门工作调研推进会</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">党建协同聚合力 结队共建促发展丨邓维实主持召开部分民办高校党纪学习教育现场推进会</div>
+					</div>
+				</div>
+				<div class="leftBox2">
+					<div class="mybutton1">国防教育</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">地理信息实训教学中心设备采购项目招标参数变更公告</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">贵阳信息科技学院内超市招标公告</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">贵阳信息科技学院新商科数字化转型教学实践基地建设项目招标公告</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">贵阳信息科技学院土木建筑虚拟仿真实验室建设项目招标公告</div>
+					</div>
+					<div class="minrigtBox1">
+						<div class="time1">12-11</div>
+						<div class="text1">贵阳信息科技学院环境工程综合实验室建设项目招标公告</div>
+					</div>
+				</div>
+				
+				</div>
+				
+			</div>
+			
+		</div>
+		<div class="kong"></div>
+		<div class="bottom" style="background-color: #ac3229;">
+			<div class="bottomCont"> 
+				<a class="bottomLeft" href="#" target="_blank"></a> 
+				<div class="bottomMiddle">
+					地址：贵州省贵阳市贵安新区花溪大学城思雅路8号
+					<br> 邮编：550025 &nbsp;&nbsp; 邮箱：bgs@gyiist.edu.cn
+					<br> 电话（传真）：0851-88921856 
+					<br> ICP备案号：<a href="http://beian.miit.gov.cn" target="blank" style="color:#fff;">黔ICP备20002667号 </a>
+				</div> 
+				<div class="bottomRight"> 
+					<img src="img/weixin.png" alt=""> 
+					<img src="img/weibo.png" alt=""> 
+				</div> 
+		   </div> 
+		</div>
+		
+	</body>
+</html>
